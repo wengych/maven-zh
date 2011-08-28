@@ -8,25 +8,26 @@ h3. 目标列表
 
 versions插件提供如下目标：
 
-|                             插件目标| 目标说明|
-| versions:display-dependency-updates|                                                                                             生成有新版本依赖可用的报告|
-|     versions:display-plugin-updates|                                                                                               生成新版本插件可用的报告|
-|   versions:display-property-updates|                                                                 生成properties描述的插件或构件版本是否存在新版本的报告|
-|              versions:update-parent|                   更新父项目版本。例，如果你使用一个公用的根POM，你希望确认使用的公用根POM版本为最新，这个目标会有帮助|
-|          versions:update-properties|                                      更新POM中定义的用于描述依赖项版本的属性，这对于锁定一组依赖使用同一版本非常有用。|
-|       versions:update-child-modules| 更新当前项目的子模块父项目信息块中的版本为当前项目版本。
-                                       例如，如果你有一个聚合的POM并且时作为整个项目父项目，同时子项目和父项目的版本不同步，这个目标可以帮助修正子模块的版本。
-                                       注意，如果你的项目破坏的相当严重并且由于版本不匹配而无法构建，你可能需要调用Maven搭配-N参数以便执行这个目标。         |
-|             versions:lock-snapshots| 在POM文件中搜索所有的-SNAPSHOT版本并且使用当前时间戳版本替换他，例如：-20090327.172306-4|
-|           versions:unlock-snapshots| 在POM文件中搜索所有的时间戳版本锁定版本，并用-SNAPSHOT版本替换。|
-|             versions:resolve-ranges| |
-|                        versions:set| |
-|               versions:use-releases| |
-|          versions:use-next-releases| |
-|         versions:use-latest-releses| |
-|         versions:use-next-snapshots| |
-|       versions:use-latest-snapshots| |
-|          versions:use-next-versions| |
-|        versions:use-latest-versions| |
-|                     versions:commit| |
-|                     versions:revert| |
+|                            插件目标|                                                                                                                  目标说明|
+| versions:display-dependency-updates|                                                                                                生成有新版本依赖可用的报告|
+|     versions:display-plugin-updates|                                                                                                  生成新版本插件可用的报告|
+|   versions:display-property-updates|                                                                    生成properties描述的插件或构件版本是否存在新版本的报告|
+|              versions:update-parent|                      更新父项目版本。例，如果你使用一个公用的根POM，你希望确认使用的公用根POM版本为最新，这个目标会有帮助|
+|          versions:update-properties|                                         更新POM中定义的用于描述依赖项版本的属性，这对于锁定一组依赖使用同一版本非常有用。|
+|       versions:update-child-modules|                                                                  更新当前项目的子模块父项目信息块中的版本为当前项目版本。
+                                         例如，如果你有一个聚合的POM并且时作为整个项目父项目，同时子项目和父项目的版本不同步，这个目标可以帮助修正子模块的版本。
+                                          注意，如果你的项目破坏的相当严重并且由于版本不匹配而无法构建，你可能需要调用Maven搭配-N参数以便执行这个目标。         |
+|             versions:lock-snapshots|                                 在POM文件中搜索所有的-SNAPSHOT版本并且使用当前时间戳版本替换他，例如：-20090327.172306-4 |
+|           versions:unlock-snapshots|                                                          在POM文件中搜索所有的时间戳版本锁定版本，并用-SNAPSHOT版本替换。|
+|             versions:resolve-ranges|                                                                                  通过版本范围查找依赖并解决具体使用版本。|
+|                        versions:set|                                                                                                  通过命令行设置项目版本。|
+|               versions:use-releases|                                                              搜索整个POM中的SNAPSHOT依赖，使用最新的RELEASE版本进行替换。|
+|          versions:use-next-releases|                                                                    将pom中所有非SNAPSHOT版本依赖升级到下一个RELEASE版本。|
+|         versions:use-latest-releses|                                                                      将pom中所有非SNAPSHOT版本依赖升级到最新RELEASE版本。|
+|         versions:use-next-snapshots|                                                                   将pom中所有非SNAPSHOT版本依赖升级到下一个SNAPSHOT版本。|
+|       versions:use-latest-snapshots|                                                                   将pom中所有非SNAPSHOT版本依赖升级到最新的SNAPSHOT版本。|
+|          versions:use-next-versions|                                                                                         将pom中的所有依赖升级到下一版本。|
+|        versions:use-latest-versions|                                                                                         将pom中的所有依赖升级到最新版本。|
+|                     versions:commit| 删除pom的备份文件（pom.xml.versionsBackup），Forms one half of the built-in "Poor Man's SCM"。是否支持提交到scm有待验证。|
+|                     versions:revert|                                                                       通过备份文件（pom.xml.versionsBackup）恢复pom文件。|
+
